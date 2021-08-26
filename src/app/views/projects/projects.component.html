@@ -1,0 +1,68 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> Projects Table
+            <button class='btn btn-primary float-right' (click)="createProject()">Create Project</button>
+          </div>
+          <div class="card-body">
+            <input
+              type="text"
+              style="padding:8px;margin:15px auto;width:30%;"
+              placeholder="Type to filter the title column..."
+              (keyup)="updateFilter($event)"
+            />
+            <ngx-datatable
+              #mydatatable
+              class="material"
+              [headerHeight]="50"
+              [limit]="5"
+              [columnMode]="ColumnMode.force"
+              [footerHeight]="50"
+              rowHeight="auto"
+              [rows]="rows"
+              [scrollbarH]="true"
+            >
+            <ngx-datatable-column name="Title">
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                {{ value }}
+              </ng-template>
+            </ngx-datatable-column>  
+            <ngx-datatable-column name="AssignedTo">
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                {{ value }}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="StartDate">
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                {{ value }}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="EndDate">
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                {{ value }}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="CreatedBy">
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                {{ value }}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="CreatedAt">
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                {{ value }}
+              </ng-template>
+            </ngx-datatable-column>            
+            <ngx-datatable-column name="Archived">
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                {{ value }}
+              </ng-template>
+            </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- </div> -->
